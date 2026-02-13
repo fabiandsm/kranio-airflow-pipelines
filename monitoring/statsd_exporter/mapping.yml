@@ -1,0 +1,6 @@
+mappings:
+  - match: "pipeline.*"
+    match_type: glob
+    name: "pipeline_${1}"
+    labels:
+      source: "airflow"

@@ -1,0 +1,37 @@
+{
+  "title": "Pipeline Health Dashboard",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "DAG Success (rate)",
+      "targets": [
+        {
+          "expr": "rate(pipeline_pipeline_dag_success[5m])",
+          "legendFormat": "success/min"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "DAG Failure (rate)",
+      "targets": [
+        {
+          "expr": "rate(pipeline_pipeline_dag_failure[5m])",
+          "legendFormat": "failure/min"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Extract Records",
+      "targets": [
+        {
+          "expr": "pipeline_pipeline_extract_records",
+          "legendFormat": "records"
+        }
+      ]
+    }
+  ],
+  "schemaVersion": 38,
+  "version": 1
+}
